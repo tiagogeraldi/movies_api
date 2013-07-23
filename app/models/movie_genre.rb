@@ -5,5 +5,5 @@ class MovieGenre < ActiveRecord::Base
 
   belongs_to :movie
 
-  validates :genre, :movie, :presence => true
+  validates :genre, :presence => true
 end

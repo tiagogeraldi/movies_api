@@ -1,7 +1,7 @@
 MoviesApi::Application.routes.draw do
-  resources :movies
+  resources :movies, :except => [:index, :edit, :show]
 
-  resources :users
+  resources :users, :except => [:index, :edit, :show]
 
-  resources :likes
+  resources :likes, :only => [:create, :destroy]
 end
