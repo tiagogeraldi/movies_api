@@ -7,4 +7,9 @@ describe Like do
 
   it { should validate_presence_of :movie }
   it { should validate_presence_of :user }
+
+  describe "#uniqueness" do
+    subject { FactoryGirl.create(:like) }
+    it { should validate_uniqueness_of(:movie_id).scoped_to(:user_id) }
+  end
 end
